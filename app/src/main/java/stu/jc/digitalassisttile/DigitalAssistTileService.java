@@ -12,9 +12,9 @@ public class DigitalAssistTileService extends TileService {
     public void onClick() {
         if (executeRootCommand("input keyevent 219"))  // KEYCODE_ASSIST
             return;
-        Intent intent = new Intent(Intent.ACTION_VOICE_COMMAND);
+        Intent intent = new Intent(Intent.ACTION_VOICE_COMMAND);  // ACTION_ASSIST not working
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivityAndCollapse(intent);
+        startActivityAndCollapse(intent);  // Not allowed on API > 33
     }
 
     public static boolean executeRootCommand(String command) {

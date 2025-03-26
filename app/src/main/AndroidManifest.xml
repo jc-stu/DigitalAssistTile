@@ -3,23 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:label="@string/app_name"
+        android:label="DigitalAssistTile"
+        android:icon="@drawable/ic_assistant"
         tools:targetApi="31">
-        <service
-            android:name=".AssistKeyAccessibilityService"
-            android:exported="true"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
-            <intent-filter>
-                <action android:name="android.accessibilityservice.AccessibilityService" />
-            </intent-filter>
-            <meta-data
-                android:name="android.accessibilityservice"
-                android:resource="@xml/accessibility_service_config" />
-        </service>
         <service
             android:name=".DigitalAssistTileService"
             android:exported="true"
-            android:icon="@drawable/ic_assistant"
             android:label="Assistant"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
