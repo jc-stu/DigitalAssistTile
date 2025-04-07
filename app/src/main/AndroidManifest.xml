@@ -3,9 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:label="DigitalAssistTile"
         android:icon="@drawable/ic_assistant"
+        android:label="DigitalAssistTile"
         tools:targetApi="31">
+        <activity
+            android:name=".AssistantSettingsActivity"
+            android:exported="false"
+            android:label="AssistantSettingsActivity">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".DigitalAssistTileService"
             android:exported="true"
